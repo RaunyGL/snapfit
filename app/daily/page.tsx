@@ -54,6 +54,15 @@ const daily = () => {
     </CardDescription>
 </Card>
 
+<Card className="mt-4  mx-auto w-80 h-9">
+    <div className="text-center flex justify-center items-center h-full">
+        <img src="light.png" alt="Ícone" className="mr-2 w-4 h-6" />
+        <h1 className=" font-medium">Dica: Controle a ingestão de água!</h1>
+    </div>
+</Card>
+
+
+
       <Footer />  
       </>
   );
