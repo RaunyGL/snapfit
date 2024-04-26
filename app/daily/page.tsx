@@ -23,11 +23,37 @@ const daily = () => {
         <HelpCircle className="mr-6"/>
     </div>
 </div>
-    <Card className="bg-gradient-to-r from-green-600 from-10% via-green-800 to-green-900 drop-shadow-lg relative h-44 w-11/12 mx-auto mt-7  ">
-          <CardDescription>
-            <Progress className="mt-20 h-4 w-80 mx-auto " value={86}  />
-          </CardDescription>
-      </Card>
+<Card className="bg-gradient-to-r from-green-600 from-10% via-green-800 to-green-900 drop-shadow-lg relative h-44 w-11/12 mx-auto mt-7">
+    <CardDescription className="absolute top-0 left-0 text-white font-semibold text-xs mt-16 ml-8">
+        86%
+    </CardDescription>
+    <CardDescription className="absolute top-0 right-0 text-white font-semibold text-lg mt-9 mr-8">
+        <span className="text-white">2151</span>/<span className="text-primary">2500</span>     
+    </CardDescription>
+    <CardDescription className="absolute top-0 right-0 text-white font-semibold text-base mt-14 mr-8">
+        Kcal
+    </CardDescription>
+    <Progress className="mt-20 h-4 w-80 mx-auto" value={86} />
+    <CardDescription className="absolute bottom-0 left-0 text-white font-semibold text-base ml-8 mb-6">
+        Proteínas
+    </CardDescription>
+    <CardDescription className="absolute bottom-0 left-0 text-white font-semibold text-sm ml-12 mb-2">
+        230 gr
+    </CardDescription>
+    <CardDescription className="absolute bottom-0 text-white font-semibold text-base text-center mb-6" style={{ left: '50%', transform: 'translateX(-50%)' }}>
+        Carboidratos
+    </CardDescription>
+    <CardDescription className="absolute bottom-0 text-white font-semibold text-sm text-center mb-2" style={{ left: '50%', transform: 'translateX(-50%)' }}>
+        100 gr
+    </CardDescription>
+    <CardDescription className="absolute bottom-0 right-0 text-white font-semibold text-base mr-8 mb-6">
+        Gorduras
+    </CardDescription>
+    <CardDescription className="absolute bottom-0 right-0 text-white font-semibold text-sm mr-12 mb-2">
+        77 gr
+    </CardDescription>
+</Card>
+
       <Footer />  
       </>
   );
