@@ -23,7 +23,7 @@ const daily = () => {
         <HelpCircle className="mr-6"/>
     </div>
 </div>
-<Card className="bg-gradient-to-r from-green-600 from-10% via-green-800 to-green-900 drop-shadow-lg relative h-44 w-11/12 mx-auto mt-7">
+<Card className="bg-gradient-to-r from-green-600 from-10% via-green-800 to-green-900 drop-shadow-lg relative h-44 w-11/12 mx-auto mt-4">
     <CardDescription className="absolute top-0 left-0 text-white font-semibold text-xs mt-16 ml-8">
         86%
     </CardDescription>
@@ -54,13 +54,65 @@ const daily = () => {
     </CardDescription>
 </Card>
 
-<Card className="mt-4  mx-auto w-80 h-9">
+<Card className="mt-4 mx-auto w-80 h-9">
     <div className="text-center flex justify-center items-center h-full">
         <img src="light.png" alt="Ícone" className="mr-2 w-4 h-6" />
-        <h1 className=" font-medium">Dica: Controle a ingestão de água!</h1>
+        <h1 className="font-medium text-sm">Dica: Controle a ingestão de água!</h1>
     </div>
 </Card>
 
+
+<Card className="w-10/12 h-20 mx-auto mt-4 drop-shadow-lg relative flex">
+    <div>
+        <img src="coffee.png" alt="Ícone" className="w-9 h-8 mt-6 ml-4" />
+    </div>
+    <div className="flex flex-col justify-center ml-4">
+        <h1 className="text-center font-bold">Café da manhã</h1>
+        <p className="text-sm">713/749 kcal</p>
+    </div>
+    <div className="flex items-center absolute top-5 right-0 pr-8">
+        <span className="text-3xl font-thin cursor-pointer">+</span>
+    </div>
+</Card>
+
+
+<Card className="w-10/12 h-20 mx-auto mt-2 drop-shadow-lg relative flex">
+    <div>
+        <img src="salad.png" alt="Ícone" className="w-8 h-6 mt-8 ml-4" />
+    </div>
+    <div className="flex flex-col justify-center ml-4">
+        <h1 className="text-center font-bold mr-5">Almoço</h1>
+        <p className="text-sm ml-2">837/999 kcal</p>
+    </div>
+    <div className="flex items-center absolute top-5 right-0 pr-8">
+        <span className="text-3xl font-thin cursor-pointer">+</span>
+    </div>
+</Card>
+
+<Card className="w-10/12 h-20 mx-auto mt-2 drop-shadow-lg relative flex">
+    <div>
+        <img src="coffee.png" alt="Ícone" className="w-9 h-8 mt-6 ml-4" />
+    </div>
+    <div className="flex flex-col justify-center ml-4">
+        <h1 className="text-center  font-bold">Café da Tarde</h1>
+        <p className="text-sm ">126/126 kcal</p>
+    </div>
+    <div className="flex items-center absolute top-5 right-0 pr-8">
+        <span className="text-3xl font-thin cursor-pointer">+</span>
+    </div>
+</Card>
+<Card className="w-10/12 h-20 mx-auto mt-2 drop-shadow-lg relative flex">
+    <div>
+        <img src="food.png" alt="Ícone" className="w-9 h-8 mt-6 ml-4" />
+    </div>
+    <div className="flex flex-col justify-center ml-4">
+        <h1 className="text-center font-bold mr-10">Jantar</h1>
+        <p className="text-sm">475/626 kcal</p>
+    </div>
+    <div className="flex items-center absolute top-5 right-0 pr-8">
+        <span className="text-3xl font-thin cursor-pointer">+</span>
+    </div>
+</Card>
 
 
       <Footer />  
