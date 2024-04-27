@@ -65,7 +65,7 @@ const daily = () => {
 
 <Card className="w-10/12 h-20 mx-auto mt-4 drop-shadow-lg relative flex">
     <div>
-        <img src="coffee.png" alt="Ícone" className="w-9 h-8 mt-6 ml-4" />
+        <img src="coffee.png" alt="Ícone" className="w-9 h-8 mt-5 ml-4" />
     </div>
     <div className="flex flex-col justify-center ml-4">
         <h1 className="text-center font-bold">Café da manhã</h1>
@@ -79,7 +79,7 @@ const daily = () => {
 
 <Card className="w-10/12 h-20 mx-auto mt-2 drop-shadow-lg relative flex">
     <div>
-        <img src="salad.png" alt="Ícone" className="w-8 h-6 mt-8 ml-4" />
+        <img src="salad.png" alt="Ícone" className="w-8 h-6 mt-7 ml-4" />
     </div>
     <div className="flex flex-col justify-center ml-4">
         <h1 className="text-center font-bold mr-5">Almoço</h1>
@@ -92,7 +92,7 @@ const daily = () => {
 
 <Card className="w-10/12 h-20 mx-auto mt-2 drop-shadow-lg relative flex">
     <div>
-        <img src="coffee.png" alt="Ícone" className="w-9 h-8 mt-6 ml-4" />
+        <img src="coffee.png" alt="Ícone" className="w-9 h-8 mt-5 ml-4" />
     </div>
     <div className="flex flex-col justify-center ml-4">
         <h1 className="text-center  font-bold">Café da Tarde</h1>
@@ -104,7 +104,7 @@ const daily = () => {
 </Card>
 <Card className="w-10/12 h-20 mx-auto mt-2 drop-shadow-lg relative flex">
     <div>
-        <img src="food.png" alt="Ícone" className="w-9 h-8 mt-6 ml-4" />
+        <img src="food.png" alt="Ícone" className="w-8 h-8 mt-6 ml-4" />
     </div>
     <div className="flex flex-col justify-center ml-4">
         <h1 className="text-center font-bold mr-10">Jantar</h1>
