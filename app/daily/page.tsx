@@ -23,7 +23,7 @@ const daily = () => {
         <HelpCircle className="mr-6"/>
     </div>
 </div>
-<Card className="bg-gradient-to-r from-green-600 from-10% via-green-800 to-green-900 drop-shadow-lg relative h-44 w-11/12 mx-auto mt-4">
+<Card className="bg-gradient-to-r from-green-20 from-100% to-green-10 from-36% drop-shadow-lg relative h-44 w-11/12 mx-auto mt-4">
     <CardDescription className="absolute top-0 left-0 text-white font-semibold text-xs mt-16 ml-8">
         86%
     </CardDescription>
