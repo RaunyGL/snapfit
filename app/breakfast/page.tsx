@@ -1,11 +1,23 @@
+
 import Footer from "@/components/components/footer";
+import List from "@/components/components/list";
 import { Card, CardDescription, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { Separator } from "@/components/ui/separator";
+import { db } from "@/lib/prisma";
+import { ArrowLeft } from "lucide-react";
 
-const Breakfast = () => {
+
+export default async function Breakfast() {
+  const foods = await db.food.findMany({});
+
   return (
     <div>
-      <Card className="bg-gradient-to-r from-green-20 from-100% to-green-10 from-36%  drop-shadow-lg relative h-44 w-11/12 mx-auto mt-7">
+      <ArrowLeft className="mt-5 ml-5" />
+      <div className=" w-full">
+
+      <Card className=" bg-gradient-to-r from-green-20 from-100% to-green-10 from-36%  drop-shadow-lg relative h-44 w-11/12 mx-auto mt-6">
         <img src="cafe.png" alt="icone de café" className="w-9 h-9 mt-4 ml-5" />
         <CardTitle className="text-white mt-1.5 ml-5">
           Café da manhã
@@ -43,9 +55,25 @@ const Breakfast = () => {
           15 gr
         </CardDescription>
       </Card>
+      </div>
+      <ScrollArea className="h-98 w-11/12 mx-auto mt-14 rounded-md border">
+        
+      <div className="p-4">
+      <h4 className="mb-4 text-base font-bold leading-none">Lista de alimentos</h4>
+
+      {foods.map((food) => (
+        <>
+        <List key={food.id} food={food} />
+        <Separator className="my-2" />
+        </>
+      )
+        )}
+      </div>
+  
+      </ScrollArea>
+
       <Footer />
     </div>
   );
 };
 
-export default Breakfast;
