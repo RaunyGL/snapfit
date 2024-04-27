@@ -17,7 +17,7 @@ const daily = () => {
     <div className="mt-8">
         <h1 className="mt-4 text-xl font-medium">Olá, Eduarda!</h1>
         <p className="text-sm font-light">Quinta, 25 de Abril</p> 
-        <h1>teste</h1>
+        
     </div>
     <div className="ml-auto flex items-center">
         <Bell className="mr-5"/>
