@@ -1,3 +1,4 @@
+"use-client"
 import { Camera, Leaf, MoreVertical, Salad, TrendingUp } from "lucide-react";
 import { Button } from "../ui/button";
 import { Card, CardContent } from "../ui/card";
