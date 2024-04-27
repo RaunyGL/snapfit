@@ -1,6 +1,7 @@
 
 import Footer from "@/components/components/footer";
 import List from "@/components/components/list";
+import { Button } from "@/components/ui/button";
 import { Card, CardDescription, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -57,9 +58,14 @@ export default async function Breakfast() {
       </Card>
       </div>
       <ScrollArea className="h-98 w-11/12 mx-auto mt-14 rounded-md border">
+        <div className="mt-6 ml-72">
+        <Button className="w-20 h-6 text-xs bg-gradient-to-r from-green-20 from-100% to-green-10 from-36%  drop-shadow-lg">
+          Adicionar
+          </Button>
+        </div>
         
       <div className="p-4">
-      <h4 className="mb-4 text-base font-bold leading-none">Lista de alimentos</h4>
+      <h4 className="mb-4 -mt-8 text-base font-bold leading-none">Lista de alimentos</h4>
 
       {foods.map((food) => (
         <>
