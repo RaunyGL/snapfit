@@ -19,6 +19,10 @@ const config = {
     },
     extend: {
       colors: {
+        green: {
+          10: "hsla(115, 53%, 16%, 1)",
+          20: "hsla(115, 28%, 40%, 1)"
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
