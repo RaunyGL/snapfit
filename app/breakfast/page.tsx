@@ -61,29 +61,27 @@ export default async function Breakfast() {
       </div>
 
       <div>
+        <ScrollArea className="overflow-y-scroll [&::-webkit-scrollbar]:hidden max-h-[500px] w-11/12 mx-auto mt-6 rounded-md border bg-white drop-shadow-lg">
+          <div className="mt-6 flex justify-end mr-3">
+            <Button className="w-20 h-6 text-xs bg-gradient-to-r from-green-20 from-100% to-green-10 from-36%  drop-shadow-lg">
+              Adicionar
+            </Button>
+          </div>
 
-      <ScrollArea className="overflow-y-scroll max-h-[500px] w-11/12 mx-auto mt-6 rounded-md border bg-white drop-shadow-lg">
-        <div className="mt-6 flex justify-end mr-3">
-          <Button className="w-20 h-6 text-xs bg-gradient-to-r from-green-20 from-100% to-green-10 from-36%  drop-shadow-lg">
-            Adicionar
-          </Button>
-        </div>
+          <div className="p-4">
+            <h4 className="mb-4 -mt-8 text-base font-bold leading-none">
+              Lista de alimentos
+            </h4>
 
-        <div className="p-4">
-          <h4 className="mb-4 -mt-8 text-base font-bold leading-none">
-            Lista de alimentos
-          </h4>
-
-          {foods.map((food) => (
-            <>
-              <List key={food.id} food={food} />
-              <Separator className="my-2" />
-            </>
-          ))}
-        </div>
-      </ScrollArea>
+            {foods.map((food) => (
+              <>
+                <List key={food.id} food={food} />
+                <Separator className="my-2" />
+              </>
+            ))}
+          </div>
+        </ScrollArea>
       </div>
-      
 
       <Footer />
     </div>
