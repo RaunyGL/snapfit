@@ -25,6 +25,8 @@ model User {
   meals         Meal[]
   // Relacionamento muitos-para-muitos com os alimentos favoritos do usuário
   favoriteFoods Food[]      @relation("FavoriteFoods")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt ()
 }
 
 // Define o modelo de estatísticas diárias do usuário
