@@ -15,7 +15,6 @@ export default async function Insert() {
             <div className="mt-5">
                 <Input type="search" placeholder="Pesquisar" className=" mx-auto text-white placeholder-white  w-[366px] h-[39px] bg-gradient-to-r from-green-20 from-100% to-green-10 from-36% rounded-[25px] shadow" >
                 </Input>
-                <Input> </Input> 
             </div> 
             <div className="flex justify-between mt-4">
                 <Card className="w-32 h-36 mt-2 ml-4 bg-white shadow-lg">
