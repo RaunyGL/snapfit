@@ -7,13 +7,16 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
 import { db } from "@/lib/prisma";
 import { ArrowLeft } from "lucide-react";
+import Link from "next/link";
 
 export default async function Breakfast() {
   const foods = await db.food.findMany({});
 
   return (
     <div>
+      <Link href="./daily">
       <ArrowLeft className="mt-5 ml-5" />
+      </Link>
 
       <div className="w-full">
         <Card className=" bg-gradient-to-r from-green-20 from-100% to-green-10 from-36%  drop-shadow-lg h-44 w-11/12 mx-auto mt-6">

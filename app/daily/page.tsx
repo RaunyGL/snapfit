@@ -3,6 +3,7 @@ import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardDescription } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Bell, HelpCircle } from "lucide-react";
+import Link from "next/link";
 
 const daily = () => {
   return (
@@ -63,6 +64,7 @@ const daily = () => {
 
 
 <Card className="w-10/12 h-20 mx-auto mt-4 drop-shadow-lg relative flex">
+    
     <div>
         <img src="coffee.png" alt="Ícone" className="w-9 h-8 mt-6 ml-4" />
     </div>
@@ -71,7 +73,9 @@ const daily = () => {
         <p className="text-sm">713/749 kcal</p>
     </div>
     <div className="flex items-center absolute top-5 right-0 pr-8">
+        <Link href="./breakfast">
         <span className="text-3xl font-thin cursor-pointer">+</span>
+        </Link>
     </div>
 </Card>
 
