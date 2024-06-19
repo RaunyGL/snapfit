@@ -66,9 +66,11 @@ export default async function Breakfast() {
       <div>
         <ScrollArea className="overflow-y-scroll [&::-webkit-scrollbar]:hidden max-h-[500px] w-11/12 mx-auto mt-6 rounded-md border bg-white drop-shadow-lg">
           <div className="mt-6 flex justify-end mr-3">
+            <Link href="./insert">
             <Button className="w-20 h-6 text-xs bg-gradient-to-r from-green-20 from-100% to-green-10 from-36%  drop-shadow-lg">
               Adicionar
             </Button>
+            </Link>
           </div>
 
           <div className="p-4">
