@@ -46,6 +46,8 @@ model Food {
   calories    Int
   servingSize String
   imageUrl    String?
+  quantity   String?
+  unit       String?
   // Relacionamento muitos-para-muitos com as refeições
   meals       Meal[]  @relation("MealFoods")
   // Relacionamento muitos-para-muitos com os usuários que favoritaram o alimento

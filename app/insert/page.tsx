@@ -6,12 +6,18 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
 import { db } from "@/lib/prisma";
 import { ArrowLeft} from "lucide-react";
+import Link from "next/link";
+
+
 
 export default async function Insert() { 
     const foods = await db.food.findMany({});
+
     return ( 
         <div >
+            <Link href="./daily">
             <ArrowLeft className="ml-5 mt-5" />
+            </Link>
             <div className="mt-5">
                 <Input type="search" placeholder="Pesquisar" className=" mx-auto text-white placeholder-white  w-[366px] h-[39px] bg-gradient-to-r from-green-20 from-100% to-green-10 from-36% rounded-[25px] shadow" >
                 </Input>
