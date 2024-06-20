@@ -30,9 +30,11 @@ const Login = () => {
               
         </div>
             <div className="mt-5">
+                <Link href="/daily">
                 <Button className="w-[349px] h-[46px] bg-white rounded-[25px] text-black">
                     <Mail className="mr-2 h-4 w-4" /> VOCE ESTÁ LOGADO
                 </Button>
+                </Link>
             </div>
             <div className="mt-5 text-center text-xs text-white opacity-80">
                 <p>Nunca Publicaremos algo sem sua permissão.</p>

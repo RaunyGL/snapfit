@@ -1,7 +1,7 @@
 
 import { PrismaClient } from "@prisma/client";
 import * as bcrypt from 'bcrypt';
-import error from "next/error";
+
 import { redirect } from "next/navigation";
 
 
@@ -10,6 +10,7 @@ const prisma = new PrismaClient();
 
 async function createAccount(formData: FormData) {
     'use server';
+    const id = formData.get('id') as string;
      const name = formData.get('name') as string;
      const email = formData.get('email') as string;
      const password = formData.get('password') as string; 
@@ -18,6 +19,7 @@ async function createAccount(formData: FormData) {
 
     await prisma.user.create({
         data: {
+            id: id,
             name: name,
             email: email,
             password: hashedPassword,

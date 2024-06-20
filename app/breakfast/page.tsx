@@ -80,7 +80,7 @@ export default async function Breakfast() {
 
             {foods.map((food) => (
               <>
-                <List key={food.id} food={food} />
+                
                 <Separator className="my-2" />
               </>
             ))}

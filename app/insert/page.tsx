@@ -53,7 +53,14 @@ export default async function Insert() {
 
           {foods.map((food) => (
             <>
-              <List key={food.id} food={food} />
+              <List key={food.id} food={food} user={{
+                id: "",
+                name: "",
+                email: "",
+                password: "",
+                createdAt: new Date(),
+                updatedAt: new Date(),
+              }} />
               <Separator className="my-2" />
             </>
           ))}

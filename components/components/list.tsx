@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
-import { Food } from "@prisma/client";
-import { Plus } from "lucide-react";
+import { Food, User } from "@prisma/client";
+import { Loader2, Plus } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -21,12 +21,39 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../ui/select";
+import { saveBreakfast } from "@/app/actions/save-breakfast";
+
+
 
 interface ListProps {
   food: Food;
+  user: User;
 }
 
-const List = ({ food }: ListProps) => {
+const List = ({ food, user }: ListProps) => {
+
+const  [submitIsLoading, setSubmitIsLoading] = useState(false);
+const  [dialogIsOpen, setDialogIsOpen] = useState(false);
+
+  const handleBreakfastSubmit = async () => {
+    setSubmitIsLoading(true);
+    try {
+      
+      await saveBreakfast({
+        userId: "0ca59f83-eb1f-4ed3-b0ed-9f2379a5d208",
+        foodId: food.id,
+        date: new Date(),
+      });
+      
+      setDialogIsOpen(false);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setSubmitIsLoading(false);
+    }
+  };
+
+
   return (
     <div>
       <ul>
@@ -38,7 +65,7 @@ const List = ({ food }: ListProps) => {
       <ul>
         <li>
           <div className="flex justify-end">
-            <Dialog>
+            <Dialog open={dialogIsOpen} onOpenChange={setDialogIsOpen}>
               <DialogTrigger asChild>
                 <Button variant="link" size="icon">
                   <Plus size={20} />
@@ -70,10 +97,11 @@ const List = ({ food }: ListProps) => {
                   </div>
                 </div>
                 <DialogFooter>
-                  <Button
+                  <Button onClick={handleBreakfastSubmit}
                     className="from-36% bg-gradient-to-r from-green-20 from-100% to-green-10  drop-shadow-lg"
                     type="submit"
                   >
+                   {submitIsLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />} 
                     Adicionar ao diário
                   </Button>
                 </DialogFooter>
