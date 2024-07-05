@@ -55,7 +55,7 @@ export default async function Insert() {
             <>
               <List key={food.id} food={food} user={{
                 id: "",
-                name: "",
+                name: food.name,
                 email: "",
                 password: "",
                 createdAt: new Date(),

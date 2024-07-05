@@ -1,5 +1,5 @@
 import Footer from "@/components/components/footer";
-import List from "@/components/components/list";
+import ListBreakfast from "@/components/components/listBreakfast";
 import { Button } from "@/components/ui/button";
 import { Card, CardDescription, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
@@ -10,7 +10,7 @@ import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 
 export default async function Breakfast() {
-  const foods = await db.food.findMany({});
+  const breakfasts = await db.breakFast.findMany({});
 
   return (
     <div>
@@ -78,12 +78,14 @@ export default async function Breakfast() {
               Lista de alimentos
             </h4>
 
-            {foods.map((food) => (
+              {breakfasts.map((breakfast) => (
+              
               <>
-                
-                <Separator className="my-2" />
+              <ListBreakfast key={breakfast.id} breakfast={breakfast}  />
+              <Separator className="my-2" />
               </>
-            ))}
+              ))}
+        
           </div>
         </ScrollArea>
       </div>
