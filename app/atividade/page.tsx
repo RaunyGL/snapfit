@@ -45,7 +45,7 @@ const Objetivos = () => {
 
         
 
-        <div className="flex flex-col items-center justify-center mt-36">
+        <div className="flex flex-col items-center justify-center mt-48">
           <Button className="w-[349px] h-[46px] bg-lime-400 mt-4 rounded-[25px] text-black">Próximo</Button>
         </div>
       </div>
