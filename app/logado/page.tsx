@@ -1,50 +1,33 @@
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Mail } from "lucide-react";
+import { ArrowLeft, Mail } from "lucide-react";
 import  Link  from 'next/link';
 
-const Header = () => {
+const Logado = () => {
     return (
-        <div className="fixed top-0 w-full h-10 bg-gradient-to-br from-green-20 from-100% to-green-10 from-40% shadow">
-            <div className="flex justify-center items-center">
-                <h1 className="text-white text-[15px] font-bold mt-2">Logado</h1>
-            </div>  
-        </div>
-    );
-};
-
-const Login = () => {
-    return (
-        <><div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-green-20 from-100% to-green-10 from-15%">
-            <Header />
-            <div className="mt-[-70px] w-80">
+        <>  
+        <div className="flex flex-col items-center  min-h-screen bg-gradient-to-br from-green-20 from-100% to-green-10 from-15%">
+          <div className="mt-5 mr-80 ">
+          <Link href="./login">
+           <ArrowLeft className="text-white" />
+          </Link>
+         </div>
+            <div className="mt-16 w-80">
                 <img src="snap-logo2.png" alt="" />
             </div>
-           
-           
-            <div className="mt-[43px]">
-                
-            </div>           
-        <div className="mt-7">
-              
-        </div>
-            <div className="mt-5">
-                <Link href="/daily">
-                <Button className="w-[349px] h-[46px] bg-white rounded-[25px] text-black">
-                    <Mail className="mr-2 h-4 w-4" /> VOCE ESTÁ LOGADO
+            <div className=" mt-36 text-white text-center text-xl w-96 h-16">
+                <p className="drop-shadow-lg font-light">
+                Bem-vindo! Vamos personalizar o SnapFit de acordo com os seus objetivos!
+                </p>
+            </div>
+            <div>
+                <Button type="submit" className="w-[349px] h-[46px] bg-lime-400 hover:bg-lime-500 rounded-[15px] text-sm mt-32 flex justify-center text-black font-extrabold">
+                    Continuar
                 </Button>
-                </Link>
+            </div> 
+
             </div>
-            <div className="mt-5 text-center text-xs text-white opacity-80">
-                <p>Nunca Publicaremos algo sem sua permissão.</p>
-            </div>
-        </div>
-        
-        
-        
         </>
     );
 };
 
-export default Login;
+export default Logado;
