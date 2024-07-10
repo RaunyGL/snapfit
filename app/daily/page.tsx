@@ -100,7 +100,7 @@ const daily = () => {
         </Card>
       </Link>
 
-      <Link href="./afternoon">
+      <Link href="./afternooncoffee">
         <Card className="w-10/12 h-20 mx-auto mt-2 drop-shadow-lg relative flex">
           <div>
             <img src="coffee.png" alt="Ícone" className="w-9 h-8 mt-6 ml-4" />
