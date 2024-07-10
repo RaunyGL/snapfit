@@ -15,7 +15,7 @@ datasource db {
 
 // Define o modelo de usuário
 model User {
-  id            String         @id @default(uuid())
+  id            Int         @id @default(autoincrement())
   name          String
   email         String      @unique
   password      String
@@ -25,19 +25,13 @@ model User {
   meals         Meal[]
   // Relacionamento muitos-para-muitos com os alimentos favoritos do usuário
   favoriteFoods Food[]      @relation("FavoriteFoods")
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt ()
-  breakFasts    BreakFast[]
-  lunches       Lunch[]
-  afternoonCoffees AfternoonCoffee[]
-  dinners       Dinner[]
 }
 
 // Define o modelo de estatísticas diárias do usuário
 model DailyStats {
-  id               String     @id @default(uuid())
+  id               Int      @id @default(autoincrement())
   user             User     @relation(fields: [userId], references: [id])
-  userId           String      @unique
+  userId           Int      @unique
   date             DateTime
   dailyCalories    Int
   weeklyWeightLoss Float
@@ -45,65 +39,22 @@ model DailyStats {
 
 // Define o modelo de alimento
 model Food {
-  id          String     @id @default(uuid())
+  id          Int     @id @default(autoincrement())
   name        String
   calories    Int
   servingSize String
   imageUrl    String?
-  quantity   String?
-  unit       String?
   // Relacionamento muitos-para-muitos com as refeições
   meals       Meal[]  @relation("MealFoods")
   // Relacionamento muitos-para-muitos com os usuários que favoritaram o alimento
   users       User[]  @relation("FavoriteFoods")
-  breakFasts  BreakFast[]
-  lunches     Lunch[]
-  afternoonCoffees AfternoonCoffee[]
-  dinners     Dinner[]
-}
-
-//Define o BreakFast
-model BreakFast {
-  id      String       @id @default(uuid())
-  date    DateTime
-  userId  String
-  user    User      @relation(fields: [userId], references: [id])
-  foodId  String
-  food    Food      @relation(fields: [foodId], references: [id])
-}
-
-model Lunch {
-  id      String       @id @default(uuid())
-  date    DateTime
-  userId  String
-  user    User      @relation(fields: [userId], references: [id])
-  foodId  String
-  food    Food      @relation(fields: [foodId], references: [id])
-}
-
-model AfternoonCoffee {
-  id      String       @id @default(uuid())
-  date    DateTime
-  userId  String
-  user    User      @relation(fields: [userId], references: [id])
-  foodId  String
-  food    Food      @relation(fields: [foodId], references: [id])
-}
-
-model Dinner {
-  id      String       @id @default(uuid())
-  date    DateTime
-  userId  String
-  user    User      @relation(fields: [userId], references: [id])
-  foodId  String
-  food    Food      @relation(fields: [foodId], references: [id])
 }
 
 // Define o modelo de refeição
 model Meal {
-  id            String      @id @default(uuid())
+  id            Int      @id @default(autoincrement())
   user          User     @relation(fields: [userId], references: [id])
-  userId        String
+  userId        Int
   date          DateTime
   time          String
   totalCalories Int
@@ -113,7 +64,7 @@ model Meal {
 
 // Define o modelo de receita
 model Recipe {
-  id          String         @id @default(uuid())
+  id          Int          @id @default(autoincrement())
   title       String
   description String
   ingredients Ingredient[]
@@ -121,9 +72,9 @@ model Recipe {
 
 // Define o modelo de ingrediente
 model Ingredient {
-  id       String    @id @default(uuid())
+  id       Int    @id @default(autoincrement())
   name     String
   quantity String
   recipe   Recipe @relation(fields: [recipeId], references: [id])
-  recipeId String
+  recipeId Int
 }

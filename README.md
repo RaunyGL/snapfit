@@ -1,84 +1,36 @@
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-# SnapFit
+## Getting Started
 
-O SnapFit é um aplicativo que usa inteligência artificial para identificar alimentos em fotos, oferecendo informações detalhadas para ajudar os usuários a fazerem escolhas alimentares mais saudáveis e simplificar o monitoramento da dieta.
-## Stack utilizada
-
-**Front-end:** NextJS, TypeScript, TailwindCSS, ShadcnUI
-
-**Back-end:** Node, Supabase, PrismaORM e PostgreSQL
-
-
-## Instalação
-
-Instale snapfit com npm
+First, run the development server:
 
 ```bash
-  npm install snapfit
-  cd snapfit
-```
-    
-
-
-## Rodando localmente
-
-Clone o projeto
-
-```bash
-  git clone https://github.com/RaunyGL/snapfit
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-Entre no diretório do projeto
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-```bash
-  cd snapfit
-```
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-Instale as dependências
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-```bash
-  npm install
-```
+## Learn More
 
-Inicie o servidor
+To learn more about Next.js, take a look at the following resources:
 
-```bash
-  npm run dev
-```
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-## Contribuindo
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-Contribuições são o que fazem a comunidade open source um lugar incrível para aprender, inspirar e criar. Quaisquer contribuições que tu fizer são **muito apreciadas**.
+## Deploy on Vercel
 
-Se tu tem sugestões para melhorar este projeto, siga estes passos:
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-1. Bifurque o projeto
-2. Crie uma Branch (`git checkout -b feature/AmazingFeature`)
-3. Faça suas alterações no código
-4. Confirme suas alterações (`git commit -m 'Add some AmazingFeature'`)
-5. Envie para a Branch (`git push origin feature/AmazingFeature`)
-6. Abra um Pull Request
-
-Pronto!
-## Equipe de Desenvolvimento
-
-- [@RaunyLima](https://www.github.com/octokatherine) 
-
-- [@LeonardoGates](https://github.com/LeonardoGates)
-
-- [@LucasPotenza](https://github.com/potnza)
-
-- [@VyniciusCorrea](https://github.com/VyniciusCorrea)
-
-
-
-## Documentação
-
-[Documentação](https://www.notion.so/SnapFit-666050b68a5d43088dd51a7ae96215c3?pvs=4)
-
-
-
-
-## Feedback e Contato
-
-Para enviar feedback ou entrar em contato, por favor, envie um e-mail para rauny.limaa@gmail.com
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

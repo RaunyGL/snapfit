@@ -3,7 +3,7 @@ import { Camera, Leaf, MoreVertical, Salad, TrendingUp } from "lucide-react";
 import { Button } from "../ui/button";
 import { Card, CardContent } from "../ui/card";
 
-const Footer = () => { 
+const Footer = () => {
   return (
     <div className="fixed bottom-10 w-full">
 
