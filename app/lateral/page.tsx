@@ -6,6 +6,7 @@ import { Bell, HelpCircle } from "lucide-react";
 import Link from "next/link";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 
+
 const Daily = () => {
   return (
     <>
@@ -23,9 +24,11 @@ const Daily = () => {
             className="w-[289px] h-[947px] bg-gradient-to-r from-green-600 via-green-800 to-[#173F14] rounded-[25px] shadow-lg bg-opacity-100 text-white border-0"
           >
             <div className="absolute top-4 ml-4 flex items-center mt-2">
+              <Link href="/profile">
               <Avatar className="rounded-full w-38 h-14">
                 <AvatarImage src="useravatar.png" />
               </Avatar>
+              </Link>
             </div>
             <div className="ml-24">
               <p className="text-lg">Eduarda</p>
@@ -40,31 +43,35 @@ const Daily = () => {
               </SheetTitle>
               <SheetDescription className="text-white">
                 <div className="w-[194px] h-[0px] origin-top-left border border-white border-opacity-50 ml-6 mt-6"></div>
+                <Link href="/profile">
                 <div className="flex items-center text-white mt-10 ml-6 text-sm">
                   <img src="/profile.svg" alt="Ícone Meu perfil" className="mr-2 w-4 h-4" />
                   Meu perfil
                 </div>
+                </Link>
                 <div className="flex items-center text-white mt-14 ml-6 text-sm">
-                  <img src="/profile.svg" alt="Ícone Monitor de água" className="mr-2 w-4 h-4" />
+                  <img src="/water.svg" alt="Ícone Monitor de água" className="mr-2 w-4 h-4" />
                   Monitor de água
                 </div>
                 <div className="flex items-center text-white mt-14 ml-6 text-sm">
-                  <img src="/profile.svg" alt="Ícone Planos" className="mr-2 w-4 h-4" />
+                  <img src="/crown.svg" alt="Ícone Planos" className="mr-2 w-4 h-4" />
                   Planos
                 </div>
                 <div className="flex items-center text-white mt-14 mb-10 ml-6 text-sm">
-                  <img src="profile.svg" alt="Ícone Ajuda" className="mr-2 w-4 h-4" />
+                  <img src="/help.svg" alt="Ícone Ajuda" className="mr-2 w-4 h-4" />
                   Ajuda
                 </div>
                 <div className="w-[194px] h-[0px] origin-top-left border border-white border-opacity-50 ml-6 mt-6"></div>
                 <div className="flex items-center text-white mt-8 text-sm ml-6 ">
-                  <img src="/profile.svg" alt="Ícone Modo Noturno" className="mr-2 w-4 h-4" />
+                  <img src="/dark-mode.svg" alt="Ícone Modo Noturno" className="mr-2 w-4 h-4" />
                   Modo Noturno
                 </div>
+                <Link href="/login">
                 <div className="flex items-center text-white mt-72 text-sm ml-6 ">
-                  <img src="/profile.svg" alt="Ícone Sair" className="mr-2 w-4 h-4" />
+                  <img src="/quit.svg" alt="Ícone Sair" className="mr-2 w-4 h-4" />
                   Sair
                 </div>
+                </Link>
               </SheetDescription>
             </SheetHeader>
           </SheetContent>
