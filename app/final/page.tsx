@@ -1,20 +1,17 @@
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
+import Link from "next/link";
 
-const Objetivos = () => {
+const Final = () => {
   return (
     <>
       <div className="min-h-screen bg-gradient-to-br from-green-20 from-100% to-green-10 pt-16 relative">
-        <button className="absolute top-4 left-1 p-2 z-20">
-          <img src="arrow.png" alt="Voltar" className="w-6 h-6" />
-        </button>
-
         <header>
           <h1 className="text-white text-center text-xl ml-4">Parabéns!</h1>
           <p className="text-white text-center text-sm ml-4 mt-16">
-            Seu plano personalizado está pronto e você está <br/>mais perto da sua
-            meta de peso.
+            Seu plano personalizado está pronto e você está <br />
+            mais perto da sua meta de peso.
           </p>
         </header>
 
@@ -63,13 +60,15 @@ const Objetivos = () => {
         </div>
 
         <div className="flex flex-col items-center justify-center mt-24">
-          <Button className="w-[349px] h-[46px] bg-lime-400 mt-4 rounded-[25px] text-black">
-            Próximo
-          </Button>
+          <Link href="./daily">
+            <Button className="w-[349px] h-[46px] bg-lime-400 mt-4 rounded-[25px] text-black">
+              Continuar
+            </Button>
+          </Link>
         </div>
       </div>
     </>
   );
 };
 
-export default Objetivos;
+export default Final;
