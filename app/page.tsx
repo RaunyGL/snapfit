@@ -1,12 +1,9 @@
-import Daily from "./daily/page";
+import Footer from "@/components/components/footer";
 
 const Home = () => {
-  return (
-    <>
-    <Daily />
+  return ( 
     
-    </>
-  
+    <Footer />
    );
 }
  
