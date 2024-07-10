@@ -18,7 +18,7 @@ const Signup = () => {
               
         </div>
             <div className="mt-96">
-                <Link href="/daily">
+                <Link href="./cadastro">
                 <Button className="w-[349px] h-[46px] bg-white rounded-[25px] text-black">
                     REGISTRE GRATUITAMENTE
                 </Button>
