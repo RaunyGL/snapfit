@@ -1,5 +1,5 @@
+import EditDialog from "@/components/components/editDialog";
 import Footer from "@/components/components/footer";
-import ListBreakfast from "@/components/components/listBreakfast";
 import { Button } from "@/components/ui/button";
 import { Card, CardDescription, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
@@ -8,10 +8,14 @@ import { Separator } from "@/components/ui/separator";
 import { db } from "@/lib/prisma";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
+import { useState } from "react";
 
 export default async function Breakfast() {
-  const breakfasts = await db.breakFast.findMany({});
-
+  const breakfasts = await db.breakFast.findMany({
+    include: {
+      food: true,
+  }});
+  
   return (
     <div>
       <Link href="./daily">
@@ -77,15 +81,15 @@ export default async function Breakfast() {
             <h4 className="mb-4 -mt-8 text-base font-bold leading-none">
               Lista de alimentos
             </h4>
-
+            <ul>
               {breakfasts.map((breakfast) => (
-              
-              <>
-              <ListBreakfast key={breakfast.id} breakfast={breakfast}  />
-              <Separator className="my-2" />
-              </>
+                <li className="text-base">{breakfast.food.name}
+                <li className="text-sm">{breakfast.food.servingSize} - {breakfast.food.calories} kcal</li>
+                <EditDialog />
+                <Separator className="my-2" />
+                </li>
               ))}
-        
+             </ul>        
           </div>
         </ScrollArea>
       </div>

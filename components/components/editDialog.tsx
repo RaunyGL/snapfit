@@ -1,6 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import { Food, BreakFast } from "@prisma/client";
+import React, { useState } from "react";
 import { Edit, Loader2 } from "lucide-react";
 import {
   Dialog,
@@ -17,20 +16,11 @@ import {
   SelectContent,
   SelectGroup,
   SelectItem,
-  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "../ui/select";
 
-
-
-
-interface ListProps {
-  breakfast: BreakFast;
-
-}
-
-const ListBreakfast = ({ breakfast }: ListProps) => {
+const EditDialog = () => {
 
 const  [submitIsLoading, setSubmitIsLoading] = useState(false);
 const  [dialogIsOpen, setDialogIsOpen] = useState(false);
@@ -53,14 +43,6 @@ const  [dialogIsOpen, setDialogIsOpen] = useState(false);
 
   return (
     <div>
-       <ul>
-        <li className="text-base">{breakfast.foodId}</li>
-        <li className="text-sm">
-          kcal
-        </li>
-      </ul>
-      <ul>
-        <li>
           <div className="flex justify-end">
             <Dialog open={dialogIsOpen} onOpenChange={setDialogIsOpen}>
               <DialogTrigger asChild>
@@ -106,12 +88,11 @@ const  [dialogIsOpen, setDialogIsOpen] = useState(false);
               </DialogContent>
             </Dialog>
           </div>
-        </li>
-      </ul>
+      
    
  
     </div>
   );
 };
 
-export default ListBreakfast;
+export default EditDialog;
