@@ -34,7 +34,7 @@ export default async function AfternoonCoffee() {
           </CardTitle>
           <CardDescription className="absolute top-0 right-0 text-white font-semibold text-lg mt-9 mr-8">
             <span className="text-white">713</span>/
-            <span className="text-primary">749</span>
+            <span className="text-primary">759</span>
           </CardDescription>
           <CardDescription className="absolute top-0 right-0 text-white font-semibold text-base mt-14 mr-8">
             Kcal
