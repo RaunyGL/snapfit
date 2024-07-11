@@ -1,143 +1,33 @@
-"use client"
 import Footer from "@/components/components/footer";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardDescription } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
-import { Bell, HelpCircle, LogOutIcon } from "lucide-react";
-import Link from "next/link";
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
 import { db } from "@/lib/prisma";
-import { signOut, useSession } from "next-auth/react";
-import { Button } from "@/components/ui/button";
-import { useRouter } from "next/navigation";
-import { useEffect } from "react";
+import { Bell, HelpCircle } from "lucide-react";
+import Link from "next/link";
 
-export default function Daily() {
-  const {data, status} = useSession()
-  const router = useRouter()
-  //const users = await db.user.findMany({});
+export default async function daily() {
+  const users = await db.user.findMany({});
 
-  useEffect(() => {
-    if (status === "unauthenticated") {
-        router.push("/login");
-    }
-}, [status, router]);
-  const handleLogoutClick = () => signOut()
   return (
     <>
       <div className="flex items-center">
-        <Sheet>
-          <SheetTrigger asChild>
-            <div className="mr-4 mt-12 cursor-pointer">
-              <Avatar className="bg-lime-600 outline-double outline-lime-600 mt- ml-4 w-10 h-10">
-                <AvatarImage src={data?.user?.image ?? ""} />
-              </Avatar>
-            </div>
-              
-           
-          </SheetTrigger>
-          <SheetContent
-            side="left"
-            className="w-[289px] h-[947px] bg-gradient-to-r from-green-600 via-green-800 to-[#173F14] rounded-[25px] shadow-lg bg-opacity-100 text-white border-0"
-          >
-            <div className="absolute top-4 ml-4 flex items-center mt-2">
-              <Link href="/profile">
-                <Avatar className="rounded-full w-38 h-10">
-                  <AvatarImage src={data?.user?.image ?? ""} />
-                </Avatar>
-              </Link>
-            </div>
-            <div className="ml-24">
-                <p className="text-lg">{data?.user?.name ?? "Usuário"}</p>
-            
-              <Card className="w-14 h-5 rounded-[14px] bg-white flex items-center justify-center mt-1 ml-2">
-                <p className="text-xs text-gray-800">Básico</p>
-              </Card>
-            </div>
-
-            <SheetHeader className="">
-              <SheetTitle className="text-white text-xs ml-8 mt-2 font-thin">
-                19 de março de 2024
-              </SheetTitle>
-              <SheetDescription className="text-white">
-                <div className="w-[194px] h-[0px] origin-top-left border border-white border-opacity-50 ml-6 mt-6"></div>
-                <Link href="/profile">
-                  <div className="flex items-center text-white mt-10 ml-6 text-sm">
-                    <img
-                      src="/profile.svg"
-                      alt="Ícone Meu perfil"
-                      className="mr-2 w-4 h-4"
-                    />
-                    Meu perfil
-                  </div>
-                </Link>
-                <div className="flex items-center text-white mt-14 ml-6 text-sm">
-                  <img
-                    src="/water.svg"
-                    alt="Ícone Monitor de água"
-                    className="mr-2 w-4 h-4"
-                  />
-                  Monitor de água
-                </div>
-                <div className="flex items-center text-white mt-14 ml-6 text-sm">
-                  <img
-                    src="/crown.svg"
-                    alt="Ícone Planos"
-                    className="mr-2 w-4 h-4"
-                  />
-                  Planos
-                </div>
-                <div className="flex items-center text-white mt-14 mb-10 ml-6 text-sm">
-                  <img
-                    src="/help.svg"
-                    alt="Ícone Ajuda"
-                    className="mr-2 w-4 h-4"
-                  />
-                  Ajuda
-                </div>
-                <div className="w-[194px] h-[0px] origin-top-left border border-white border-opacity-50 ml-6 mt-6"></div>
-                <div className="flex items-center text-white mt-8 text-sm ml-6 ">
-                  <img
-                    src="/dark-mode.svg"
-                    alt="Ícone Modo Noturno"
-                    className="mr-2 w-4 h-4"
-                  />
-                  Modo Noturno
-                </div>
-              
-                  <div className="flex items-center text-white mt-72 text-sm ml-6 ">
-                    <Button onClick={handleLogoutClick} variant="link">
-                      <LogOutIcon className="mr-2" size={20} />
-                    Sair
-                    </Button>
-                  </div>
-                
-              </SheetDescription>
-            </SheetHeader>
-          </SheetContent>
-        </Sheet>
+        <div className="mr-4 mt-12">
+          <Avatar className="bg-lime-600 outline-double outline-lime-600 mt- ml-4 w-14 h-14">
+            <AvatarImage src="useravatar.png" />
+          </Avatar>
+        </div>
         <div className="mt-8">
-            <>
-              <h1 className="mt-4 text-xl font-medium">
-                Olá, {data?.user?.name ?? "Usuário"}
-              </h1>
-              <p className="text-sm font-light">Quinta, 25 de Abril</p>
-            </>
-        
+          {users.map((user) => (
+            <><h1 key={user.id} className="mt-4 text-xl font-medium">Olá,{user.name}</h1>
+            <p className="text-sm font-light">Quinta, 25 de Abril</p></>
+          ))}
         </div>
         <div className="ml-auto flex items-center">
           <Bell className="mr-5" />
           <HelpCircle className="mr-6" />
         </div>
       </div>
-
       <Card className="bg-gradient-to-r from-green-600 from-10% via-green-800 to-green-900 drop-shadow-lg relative h-44 w-11/12 mx-auto mt-4">
         <CardDescription className="absolute top-0 left-0 text-white font-semibold text-xs mt-16 ml-8">
           86%
@@ -215,13 +105,13 @@ export default function Daily() {
         </Card>
       </Link>
 
-      <Link href="./afternoon-snack">
+      <Link href="./afternooncoffee">
         <Card className="w-10/12 h-20 mx-auto mt-2 drop-shadow-lg relative flex">
           <div>
             <img src="coffee.png" alt="Ícone" className="w-9 h-8 mt-6 ml-4" />
           </div>
           <div className="flex flex-col justify-center ml-4">
-            <h1 className="text-center font-bold">Café da Tarde</h1>
+            <h1 className="text-center  font-bold">Café da Tarde</h1>
             <p className="text-sm ">126/126 kcal</p>
           </div>
           <div className="flex items-center absolute top-5 right-0 pr-8">
@@ -248,4 +138,5 @@ export default function Daily() {
       <Footer />
     </>
   );
-}
+};
+

@@ -53,7 +53,7 @@ async function login(formData: FormData) {
         redirect('/login');
     }
 
-    redirect('/logado');
+    redirect('/daily');
     //Se o usuario e senha estiverem corretos, redireciona para a pagina de logado
 
 

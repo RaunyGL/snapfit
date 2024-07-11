@@ -1,10 +1,27 @@
+"use client"
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import AuthActions from "@/modules/auth/actions/auth-actions";
+//import AuthActions from "@/modules/auth/actions/auth-actions";
 import { Mail } from "lucide-react";
+import { signIn, useSession } from "next-auth/react";
 import  Link  from 'next/link';
+import { useRouter } from "next/navigation";
+
+import { useEffect } from "react";
 
 const Login = () => {
+    const { data, status } = useSession();
+    const router = useRouter();
+
+    useEffect(() => {
+        if (status === "authenticated") {
+            router.push("/daily");
+        }
+    }, [status, router]);
+
+    const handleLoginClick = async () => {
+        await signIn("google");
+    };
     return (
         <>
         <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-green-20 from-100% to-green-10 from-15%">
@@ -12,7 +29,7 @@ const Login = () => {
             <div className="mt-[-70px] w-80">
                 <img src="snap-logo2.png" alt="" />
             </div>
-            <form action={AuthActions.login}>
+           
             <div className="">
                 <div>
                 
@@ -32,7 +49,7 @@ const Login = () => {
                     Entrar
                 </Button>
             </div>
-            </form>
+           
             <div>
                 <div className="w-[119px] h-5 text-lime-400 text-[15px] text-sm mt-14">Esqueci a senha</div>
             </div>
@@ -52,9 +69,11 @@ const Login = () => {
         </div>
       
             <div className="mt-5">
-                <Button className="w-[349px] h-[46px] bg-white rounded-[25px] text-black">
-                    <Mail className="mr-2 h-4 w-4" /> Login with Email
-                </Button>
+                <Button  onClick={handleLoginClick} className="w-[349px] h-[46px] bg-white rounded-[25px] text-black">
+                <img src="google-icon.png" width="20" height="20" alt="icone do google"/>
+                   <p className="ml-2">Entrar com o Google</p>
+             </Button>
+    
             </div>
             <div className="mt-5 text-center text-xs text-white opacity-80">
                 <p>Nunca Publicaremos algo sem sua permissão.</p>

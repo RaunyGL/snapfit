@@ -1,13 +1,12 @@
-import Daily from "./daily/page";
+
+import Signup from "./signup/page";
 
 const Home = () => {
   return (
     <>
-    <Daily />
-    
+      <Signup />
     </>
-  
-   );
-}
- 
+  );
+};
+
 export default Home;
