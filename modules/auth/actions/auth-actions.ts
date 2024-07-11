@@ -46,7 +46,7 @@ async function login(formData: FormData) {
         redirect('/login');
     }
      
-    const isMatch = await bcrypt.compare(password, user.password);
+    const isMatch = await bcrypt.compare(password, user.password as string);
     
     if (!isMatch) {
         console.log('Senha incorreta');

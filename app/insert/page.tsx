@@ -58,6 +58,8 @@ export default async function Insert() {
                 name: food.name,
                 email: "",
                 password: "",
+                emailVerified: null,
+                image: null,
                 createdAt: new Date(),
                 updatedAt: new Date(),
               }} />
