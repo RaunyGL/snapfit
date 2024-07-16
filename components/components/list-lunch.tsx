@@ -21,7 +21,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../ui/select";
-import { saveBreakfast } from "@/app/actions/save-breakfast";
+import { saveLunch } from "@/app/actions/save-lunch";
 
 
 
@@ -39,7 +39,7 @@ const  [dialogIsOpen, setDialogIsOpen] = useState(false);
     setSubmitIsLoading(true);
     try {
       
-      await saveBreakfast({
+      await saveLunch({
         userId: "b6c9832c-e682-45aa-8baa-659879a7561e",
         foodId: food.id,
         date: new Date(),

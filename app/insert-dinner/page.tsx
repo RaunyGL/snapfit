@@ -1,5 +1,5 @@
 import Footer from "@/components/components/footer";
-import List from "@/components/components/list";
+import List from "@/components/components/list-dinner";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -15,7 +15,7 @@ export default async function Insert() {
 
     return ( 
         <div >
-            <Link href="./daily">
+            <Link href="./dinner">
             <ArrowLeft className="ml-5 mt-5" />
             </Link>
             <div className="mt-5">

@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -6,13 +7,15 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import Footer from "@/components/components/footer";
+import { useSession } from "next-auth/react";
 
 const profile = () => {
+  const {data} = useSession()
   return (
     <>
       <div className="top-0 w-full h-10 bg-white shadow">
         <div className="flex items-center justify-between px-4">
-        <Link href="/lateral">
+        <Link href="/daily">
           <Button className="bg-transparent">
             <ArrowLeft color="black" />
           </Button>
@@ -24,9 +27,9 @@ const profile = () => {
         <Card className="mt-2 bg-green-800 w-[409px] h-[317px] mx-auto shadow-xl">
           <div className="text-center flex flex-col items-center justify-center">
             <Avatar className="mt-2 w-[175px] h-[179px]">
-              <AvatarImage src="useravatar.png" />
+              <AvatarImage src={data?.user?.image ?? ''} />
             </Avatar>
-            <p className="mt-2 text-white text-xl">Eduarda Pins</p>
+            <p className="mt-2 text-white text-xl">{data?.user?.name}</p>
             <p className="text-white text-sm">Pelotas, RS</p>
             <Card className="mt-2 bg-[#A2ED3A] w-[137px] h-[45px] flex flex-col items-center justify-center">
               <p className="text-black text-sm mt-2">Seja Premium</p>

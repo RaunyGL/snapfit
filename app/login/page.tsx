@@ -1,7 +1,7 @@
 "use client"
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-//import AuthActions from "@/modules/auth/actions/auth-actions";
+import AuthActions from "@/modules/auth/actions/auth-actions";
 import { Mail } from "lucide-react";
 import { signIn, useSession } from "next-auth/react";
 import  Link  from 'next/link';
@@ -29,7 +29,7 @@ const Login = () => {
             <div className="mt-[-70px] w-80">
                 <img src="snap-logo2.png" alt="" />
             </div>
-           
+          
             <div className="">
                 <div>
                 
